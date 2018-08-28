@@ -1,0 +1,2074 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<menuitem id="account_reports_cz_statements_menu" name="Czech" parent="account.menu_finance_reports" sequence="0" groups="account.group_account_user"/>
+
+<data noupdate="1">
+    <record model="account.account.type" id="account_type_tax">
+      <field name="name">Tax</field>
+    </record>
+
+    <record model="account.account.type" id="account_type_settlement">
+      <field name="name">Settlement</field>
+    </record>
+
+    <record model="account.account.type" id="account_type_nonbalance">
+      <field name="name">Nonbalance</field>
+    </record>
+
+        <record id="chart261000" model="account.account.template">
+                <field name="code">261-000</field>
+                <field name="reconcile" eval="True"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="name">Cash in transit</field>
+        </record>
+    <!-- Chart template -->
+
+        <record id="cz_chart_template" model="account.chart.template">
+            <field name="name">Czech - Accounts chart</field>
+            <field name="code_digits">6</field>
+            <field name="currency_id" ref="base.CZK"/>
+            <field name="bank_account_code_prefix">221-000</field>
+            <field name="cash_account_code_prefix">211-000</field>
+            <field name="transfer_account_id" ref="chart261000"/>
+        </record>
+
+        <!-- Account Templates -->
+        <record id="chart000001" model="account.account.template">
+            <field name="chart_template_id" ref="cz_chart_template"/>
+        </record>
+
+        <!-- Asset 000-->
+        <record id="chart010000" model="account.account.template">
+                <field name="code">010-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Long-lived intangible assets</field>
+        </record>
+
+        <record id="chart011000" model="account.account.template">
+                <field name="code">011-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_non_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Start-up costs</field>
+        </record>
+
+        <record id="chart012000" model="account.account.template">
+                <field name="code">012-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_non_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Research and development capitalized</field>
+        </record>
+
+        <record id="chart013000" model="account.account.template">
+                <field name="code">013-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_non_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Software</field>
+        </record>
+
+        <record id="chart014000" model="account.account.template">
+                <field name="code">014-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_non_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Goodwill</field>
+        </record>
+
+        <record id="chart019000" model="account.account.template">
+                <field name="code">019-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_non_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other intangible fixed assets</field>
+        </record>
+
+        <record id="chart021000" model="account.account.template">
+                <field name="code">021-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Buildings</field>
+        </record>
+
+        <record id="chart022000" model="account.account.template">
+                <field name="code">022-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Independently movable things and groups of movable things</field>
+        </record>
+
+        <record id="chart025000" model="account.account.template">
+                <field name="code">025-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Orchards and vineyards</field>
+        </record>
+
+        <record id="chart026000" model="account.account.template">
+                <field name="code">026-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Livestock</field>
+        </record>
+
+        <record id="chart029000" model="account.account.template">
+                <field name="code">029-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other tangible long-lived assets</field>
+        </record>
+
+        <record id="chart031000" model="account.account.template">
+                <field name="code">031-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_fixed_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Land</field>
+        </record>
+
+        <record id="chart032O00" model="account.account.template">
+                <field name="code">032-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_non_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Works of art and collections</field>
+        </record>
+
+        <record id="chart041000" model="account.account.template">
+                <field name="code">041-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Acquisition of intangible assets</field>
+        </record>
+
+        <record id="chart042000" model="account.account.template">
+                <field name="code">042-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Acquisition of tangible long-lived assets</field>
+        </record>
+
+        <record id="chart043000" model="account.account.template">
+                <field name="code">043-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Acquisition of financial assets</field>
+        </record>
+
+        <record id="chart051000" model="account.account.template">
+                <field name="code">051-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Advance payments for long-lived intangible assets</field>
+        </record>
+
+        <record id="chart052000" model="account.account.template">
+                <field name="code">052-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Advance payments for long-lived tangible assets</field>
+        </record>
+
+        <record id="chart053000" model="account.account.template">
+                <field name="code">053-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Advance payments for long-lived financial assets</field>
+        </record>
+
+        <record id="chart061000" model="account.account.template">
+                <field name="code">061-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Financial assets and shares in subsidiaries</field>
+        </record>
+
+        <record id="chart062000" model="account.account.template">
+                <field name="code">062-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Financial assets and shares in associates</field>
+        </record>
+
+        <record id="chart063000" model="account.account.template">
+                <field name="code">063-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other financial assets and shares</field>
+        </record>
+
+        <record id="chart066000" model="account.account.template">
+                <field name="code">066-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Loans and credit - managing and controlling persons, significant influence</field>
+        </record>
+
+        <record id="chart067000" model="account.account.template">
+                <field name="code">067-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other loans</field>
+        </record>
+
+        <record id="chart069000" model="account.account.template">
+                <field name="code">069-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other long-term financial assets</field>
+        </record>
+
+        <record id="chart071000" model="account.account.template">
+                <field name="code">071-00</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Accumulated amortization of start-up costs</field>
+        </record>
+
+        <record id="chart072000" model="account.account.template">
+                <field name="code">072-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Accumulated amortization of intangible research and development results</field>
+        </record>
+
+        <record id="chart073000" model="account.account.template">
+                <field name="code">073-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Accumulated amortization of software</field>
+        </record>
+
+        <record id="chart074000" model="account.account.template">
+                <field name="code">074-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Accumulated amortization of valuable rights</field>
+        </record>
+
+        <record id="chart075000" model="account.account.template">
+                <field name="code">075-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Accumulated amortization of goodwill</field>
+        </record>
+
+        <record id="chart079000" model="account.account.template">
+                <field name="code">079-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Accumulated amortization of other intangible assets</field>
+        </record>
+
+        <record id="chart081000" model="account.account.template">
+                <field name="code">081-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Accumulated depreciation of buildings</field>
+        </record>
+
+        <record id="chart082000" model="account.account.template">
+                <field name="code">082-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Accumulated depreciation of independently movable assets and groups of movable assets</field>
+        </record>
+
+        <record id="chart085000" model="account.account.template">
+                <field name="code">085-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Accumulated depreciation of orchards and vineyards</field>
+        </record>
+
+        <record id="chart086000" model="account.account.template">
+                <field name="code">086-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Accumulated depreciation of livestock</field>
+        </record>
+
+        <record id="chart089000" model="account.account.template">
+                <field name="code">089-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Accumulated depreciation of other tangible assets</field>
+        </record>
+
+        <record id="chart091000" model="account.account.template">
+                <field name="code">091-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowance on intangible assets</field>
+        </record>
+
+        <record id="chart092000" model="account.account.template">
+                <field name="code">092-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowance on tangible long-lived assets</field>
+        </record>
+
+        <record id="chart093000" model="account.account.template">
+                <field name="code">093-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowance on long-term incomplete intangible assets</field>
+        </record>
+
+        <record id="chart094000" model="account.account.template">
+                <field name="code">094-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowance on long-term incomplete tangible long-lived assets</field>
+        </record>
+
+        <record id="chart095000" model="account.account.template">
+                <field name="code">095-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowance on advance payments given on long-lived assets</field>
+        </record>
+
+        <record id="chart096000" model="account.account.template">
+                <field name="code">096-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowance on long-term financial assets</field>
+        </record>
+
+        <record id="chart097000" model="account.account.template">
+                <field name="code">097-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Revaluation of acquired assets</field>
+        </record>
+
+        <record id="chart098000" model="account.account.template">
+                <field name="code">098-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowance on revaluation of acquired assets</field>
+        </record>
+
+        <!-- Stock 100-->
+
+        <record id="chart111000" model="account.account.template">
+                <field name="code">111-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Cost of material</field>
+        </record>
+
+        <record id="chart112000" model="account.account.template">
+                <field name="code">112-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Materials in inventory</field>
+        </record>
+
+        <record id="chart119000" model="account.account.template">
+                <field name="code">119-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Material in transit</field>
+        </record>
+
+        <record id="chart121000" model="account.account.template">
+                <field name="code">121-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Work in process</field>
+        </record>
+
+        <record id="chart122000" model="account.account.template">
+                <field name="code">122-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Semi-finished goods</field>
+        </record>
+
+        <record id="chart123000" model="account.account.template">
+                <field name="code">123-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Products</field>
+        </record>
+
+        <record id="chart124000" model="account.account.template">
+                <field name="code">124-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Animals</field>
+        </record>
+
+        <record id="chart131000" model="account.account.template">
+                <field name="code">131-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Cost of merchandise</field>
+        </record>
+
+        <record id="chart132000" model="account.account.template">
+                <field name="code">132-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Merchandise in warehouse and stores</field>
+        </record>
+
+        <record id="chart139000" model="account.account.template">
+                <field name="code">139-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Merchandise in transit</field>
+        </record>
+
+        <record id="chart151000" model="account.account.template">
+                <field name="code">151-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Advance payments on material</field>
+        </record>
+
+        <record id="chart152000" model="account.account.template">
+                <field name="code">152-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Advance payments on animals</field>
+        </record>
+
+        <record id="chart153000" model="account.account.template">
+                <field name="code">153-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Advance payments for merchandise</field>
+        </record>
+
+        <record id="chart191000" model="account.account.template">
+                <field name="code">191-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowances on material</field>
+        </record>
+
+        <record id="chart192000" model="account.account.template">
+                <field name="code">192-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowances on work in process</field>
+        </record>
+
+        <record id="chart193000" model="account.account.template">
+                <field name="code">193-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowances on semi-finished goods</field>
+        </record>
+
+        <record id="chart194000" model="account.account.template">
+                <field name="code">194-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowances on products</field>
+        </record>
+
+        <record id="chart195000" model="account.account.template">
+                <field name="code">195-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowances on animals</field>
+        </record>
+
+        <record id="chart196000" model="account.account.template">
+                <field name="code">196-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowances on merchandise</field>
+        </record>
+
+        <record id="chart197000" model="account.account.template">
+                <field name="code">197-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowances on advance payments on material</field>
+        </record>
+
+        <record id="chart198000" model="account.account.template">
+                <field name="code">198-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowances on advance payments on merchandise</field>
+        </record>
+
+        <record id="chart199000" model="account.account.template">
+                <field name="code">199-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowances on advance payments on animals</field>
+        </record>
+
+        <!-- Finance 200-->
+
+        <record id="chart231000" model="account.account.template">
+                <field name="code">231-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Short-term bank loans</field>
+        </record>
+
+        <record id="chart232000" model="account.account.template">
+                <field name="code">232-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Discounted loans</field>
+        </record>
+
+        <record id="chart241000" model="account.account.template">
+                <field name="code">241-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Issued short-term bonds</field>
+        </record>
+
+        <record id="chart249000" model="account.account.template">
+                <field name="code">249-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other short-term financial assistance</field>
+        </record>
+
+        <record id="chart251000" model="account.account.template">
+                <field name="code">251-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Registered equity securities held for trading</field>
+        </record>
+
+        <record id="chart252000" model="account.account.template">
+                <field name="code">252-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Own shares and equity interests</field>
+        </record>
+
+        <record id="chart253000" model="account.account.template">
+                <field name="code">253-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Registered debt securities held for trading</field>
+        </record>
+
+        <record id="chart255000" model="account.account.template">
+                <field name="code">255-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Own bonds</field>
+        </record>
+
+        <record id="chart256000" model="account.account.template">
+                <field name="code">256-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Short-term debt securities held to maturity</field>
+        </record>
+
+        <record id="chart257000" model="account.account.template">
+                <field name="code">257-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other securities</field>
+        </record>
+
+        <record id="chart259000" model="account.account.template">
+                <field name="code">259-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Acquisition of short-term financial assets</field>
+        </record>
+
+        <record id="chart291000" model="account.account.template">
+                <field name="code">291-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowance for short-term financial assets</field>
+        </record>
+
+        <!-- Payable/Reciavable 300-->
+
+        <record id="chart311000" model="account.account.template">
+                <field name="code">311-000</field>
+                <field name="reconcile" eval="True"/>
+                <field name="user_type_id" ref="account.data_account_type_receivable"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Accounts receivable</field>
+        </record>
+
+        <record id="chart312000" model="account.account.template">
+                <field name="code">312-000</field>
+                <field name="reconcile" eval="True"/>
+                <field name="user_type_id" ref="account.data_account_type_receivable"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Notes receivable</field>
+        </record>
+
+        <record id="chart313000" model="account.account.template">
+                <field name="code">313-000</field>
+                <field name="reconcile" eval="True"/>
+                <field name="user_type_id" ref="account.data_account_type_receivable"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Receivables on discounted securities</field>
+        </record>
+
+        <record id="chart314000" model="account.account.template">
+                <field name="code">314-000</field>
+                <field name="reconcile" eval="True"/>
+                <field name="user_type_id" ref="account.data_account_type_receivable"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Advance payments given - sort-term and long-term</field>
+        </record>
+
+         <record id="chart315000" model="account.account.template">
+                <field name="code">315-000</field>
+                <field name="reconcile" eval="True"/>
+                <field name="user_type_id" ref="account.data_account_type_receivable"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other receivables</field>
+        </record>       
+
+        <record id="chart321000" model="account.account.template">
+                <field name="code">321-000</field>
+                <field name="reconcile" eval="True"/>
+                <field name="user_type_id" ref="account.data_account_type_payable"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Accounts payable</field>
+        </record>
+
+        <record id="chart322000" model="account.account.template">
+                <field name="code">322-000</field>
+                <field name="reconcile" eval="True"/>
+                <field name="user_type_id" ref="account.data_account_type_payable"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Notes payable</field>
+        </record>
+
+        <record id="chart324000" model="account.account.template">
+                <field name="code">324-000</field>
+                <field name="reconcile" eval="True"/>
+                <field name="user_type_id" ref="account.data_account_type_payable"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Advance payments received</field>
+        </record>
+
+        <record id="chart325000" model="account.account.template">
+                <field name="code">325-000</field>
+                <field name="reconcile" eval="True"/>
+                <field name="user_type_id" ref="account.data_account_type_payable"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other liabilities</field>
+        </record>
+
+        <record id="chart331000" model="account.account.template">
+                <field name="code">331-000</field>
+                <field name="reconcile" eval="True"/>
+                <field name="user_type_id" ref="account.data_account_type_payable"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Employees</field>
+        </record>
+
+        <record id="chart333000" model="account.account.template">
+                <field name="code">333-000</field>
+                <field name="reconcile" eval="True"/>
+                <field name="user_type_id" ref="account.data_account_type_payable"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other liabilities to employees</field>
+        </record>
+
+        <record id="chart335000" model="account.account.template">
+                <field name="code">335-000</field>
+                <field name="reconcile" eval="True"/>
+                <field name="user_type_id" ref="account.data_account_type_receivable"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Receivables from employees</field>
+        </record>
+
+        <record id="chart336000" model="account.account.template">
+                <field name="code">336-000</field>
+                <field name="reconcile" eval="True"/>
+                <field name="user_type_id" ref="account.data_account_type_payable"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Clearing with social security and health insurance</field>
+        </record>
+
+        <record id="chart341000" model="account.account.template">
+                <field name="code">341-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Income tax</field>
+        </record>
+
+        <record id="chart342000" model="account.account.template">
+                <field name="code">342-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other direct taxes</field>
+        </record>
+
+        <record id="chart343100" model="account.account.template">
+                <field name="code">343-100</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 0% in</field>
+        </record>
+
+        <record id="chart343101" model="account.account.template">
+                <field name="code">343-101</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 21% in</field>
+        </record>
+
+        <record id="chart343102" model="account.account.template">
+                <field name="code">343-102</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 15% in</field>
+        </record>
+
+        <record id="chart343104" model="account.account.template">
+                <field name="code">343-104</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 10% in</field>
+        </record>
+
+        <record id="chart343199" model="account.account.template">
+                <field name="code">343-199</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax free in</field>
+        </record>
+
+        <record id="chart343200" model="account.account.template">
+                <field name="code">343-200</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 0% out</field>
+        </record>
+
+        <record id="chart343201" model="account.account.template">
+                <field name="code">343-201</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 21% out</field>
+        </record>
+
+        <record id="chart343202" model="account.account.template">
+                <field name="code">343-202</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 15% out</field>
+        </record>
+
+        <record id="chart343204" model="account.account.template">
+                <field name="code">343-204</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 10% out</field>
+        </record>
+
+        <record id="chart343299" model="account.account.template">
+                <field name="code">343-299</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax free out</field>
+        </record>
+
+        <record id="chart345000" model="account.account.template">
+                <field name="code">345-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other taxes and fees</field>
+        </record>
+
+        <record id="chart346000" model="account.account.template">
+                <field name="code">346-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Subsidies from government budget</field>
+        </record>
+
+        <record id="chart347000" model="account.account.template">
+                <field name="code">347-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other subsidies</field>
+        </record>
+
+        <record id="chart351000" model="account.account.template">
+                <field name="code">351-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Receivables - controlling and managing person</field>
+        </record>
+        
+        <record id="chart352000" model="account.account.template">
+                <field name="code">352-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Receivables - significant influence</field>
+        </record>
+        
+        <record id="chart353000" model="account.account.template">
+                <field name="code">353-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Subscribed legal capital receivable</field>
+        </record>
+
+        <record id="chart354000" model="account.account.template">
+                <field name="code">354-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Receivable for equity holder related to payment of loss</field>
+        </record>
+        
+        <record id="chart355000" model="account.account.template">
+                <field name="code">355-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other receivables from equity holders and cooperative members</field>
+        </record>
+
+        <record id="chart358000" model="account.account.template">
+                <field name="code">358-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Receivables from group companies</field>
+        </record>
+
+        <record id="chart361000" model="account.account.template">
+                <field name="code">361-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Liabilities - controlling and managing person</field>
+        </record>
+
+        <record id="chart364000" model="account.account.template">
+                <field name="code">364-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Payables to equity holders in profit distribution</field>
+        </record>
+        
+        <record id="chart365000" model="account.account.template">
+                <field name="code">365-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other payables to partners and cooperative members</field>
+        </record>
+
+        <record id="chart366000" model="account.account.template">
+                <field name="code">366-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Payables to equity holders and members of cooperatives from employment</field>
+        </record>
+
+        <record id="chart367000" model="account.account.template">
+                <field name="code">367-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Payables from underwritten unpaid securities and deposits</field>
+        </record>
+
+        <record id="chart368000" model="account.account.template">
+                <field name="code">368-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Payable to group companies</field>
+        </record>
+
+        <record id="chart371000" model="account.account.template">
+                <field name="code">371-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Receivable from sale of business</field>
+        </record>
+
+        <record id="chart372000" model="account.account.template">
+                <field name="code">372-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Liability from purchase of business</field>
+        </record>
+
+        <record id="chart373000" model="account.account.template">
+                <field name="code">373-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Receivables and payables from long-lived-term operations</field>
+        </record>
+
+        <record id="chart374000" model="account.account.template">
+                <field name="code">374-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Rent receivable</field>
+        </record>
+
+        <record id="chart375000" model="account.account.template">
+                <field name="code">375-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Receivables on bonds issued</field>
+        </record>
+
+        <record id="chart376000" model="account.account.template">
+                <field name="code">376-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Purchased options</field>
+        </record>
+
+        <record id="chart377000" model="account.account.template">
+                <field name="code">377-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Sold options</field>
+        </record>
+
+        <record id="chart378000" model="account.account.template">
+                <field name="code">378-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other receivables</field>
+        </record>
+
+        <record id="chart379000" model="account.account.template">
+                <field name="code">379-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other payables</field>
+        </record>
+
+        <record id="chart381000" model="account.account.template">
+                <field name="code">381-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Prepaid expenses</field>
+        </record>
+
+        <record id="chart382000" model="account.account.template">
+                <field name="code">382-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Complex prepaid expense</field>
+        </record>
+
+        <record id="chart383000" model="account.account.template">
+                <field name="code">383-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Accrued expenses</field>
+        </record>
+
+        <record id="chart384000" model="account.account.template">
+                <field name="code">384-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Unearned and deferred revenue</field>
+        </record>
+
+        <record id="chart385000" model="account.account.template">
+                <field name="code">385-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Accrued revenue</field>
+        </record>
+
+        <record id="chart388000" model="account.account.template">
+                <field name="code">388-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Estimated active amounts</field>
+        </record>
+
+        <record id="chart389000" model="account.account.template">
+                <field name="code">389-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Estimated passive amounts</field>
+        </record>
+
+        <record id="chart391000" model="account.account.template">
+                <field name="code">391-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Allowance to receivables</field>
+        </record>
+
+        <record id="chart395000" model="account.account.template">
+                <field name="code">395-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Internal netting</field>
+        </record>
+
+        <record id="chart398000" model="account.account.template">
+                <field name="code">398-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Connecting account for partnering</field>
+        </record>
+
+        <!-- Equity and long-term liabilities -->
+
+        <record id="chart411000" model="account.account.template">
+                <field name="code">411-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_equity"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Legal (statutory) capital</field>
+        </record>
+
+        <record id="chart412000" model="account.account.template">
+                <field name="code">412-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Share premium</field>
+        </record>
+
+        <record id="chart413000" model="account.account.template">
+                <field name="code">413-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other capital reserves</field>
+        </record>
+
+        <record id="chart414000" model="account.account.template">
+                <field name="code">414-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Asset and liability revaluation differences</field>
+        </record>
+
+        <record id="chart417000" model="account.account.template">
+                <field name="code">417-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Differences from company transformations</field>
+        </record>
+
+        <record id="chart418000" model="account.account.template">
+                <field name="code">418-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Revaluation differences from company transformations</field>
+        </record>
+
+        <record id="chart419000" model="account.account.template">
+                <field name="code">419-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Changes in legal capital</field>
+        </record>
+
+        <record id="chart421000" model="account.account.template">
+                <field name="code">421-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Legal reserve</field>
+        </record>
+
+        <record id="chart422000" model="account.account.template">
+                <field name="code">422-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Non-distributable reserve</field>
+        </record>
+
+        <record id="chart423000" model="account.account.template">
+                <field name="code">423-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Statutory reserves</field>
+        </record>
+
+        <record id="chart427000" model="account.account.template">
+                <field name="code">427-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other reserves</field>
+        </record>
+
+        <record id="chart428000" model="account.account.template">
+                <field name="code">428-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Retained earnings prior years</field>
+        </record>
+
+        <record id="chart429000" model="account.account.template">
+                <field name="code">429-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Retained losses prior years</field>
+        </record>
+
+        <record id="chart431000" model="account.account.template">
+                <field name="code">431-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Net income in process of approval</field>
+        </record>
+
+        <record id="chart451000" model="account.account.template">
+                <field name="code">451-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Provisions as per special legislation</field>
+        </record>
+
+        <record id="chart453000" model="account.account.template">
+                <field name="code">453-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Provision for income tax</field>
+        </record>
+
+        <record id="chart459000" model="account.account.template">
+                <field name="code">459-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other provisions</field>
+        </record>
+
+        <record id="chart460000" model="account.account.template">
+                <field name="code">460-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Bank loans</field>
+        </record>
+
+        <record id="chart471000" model="account.account.template">
+                <field name="code">471-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Long-term liabilities - controlling person</field>
+        </record>
+
+        <record id="chart472000" model="account.account.template">
+                <field name="code">472-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Long-term liabilities - significant influence</field>
+        </record>
+
+        <record id="chart473000" model="account.account.template">
+                <field name="code">473-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Issued bonds</field>
+        </record>
+
+        <record id="chart474000" model="account.account.template">
+                <field name="code">474-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Rental liabilities</field>
+        </record>
+
+        <record id="chart475000" model="account.account.template">
+                <field name="code">475-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Long-term advance payments received</field>
+        </record>
+
+        <record id="chart478000" model="account.account.template">
+                <field name="code">478-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Long-term notes payable</field>
+        </record>
+
+        <record id="chart479000" model="account.account.template">
+                <field name="code">479-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other long-term liabilities</field>
+        </record>
+
+        <record id="chart481000" model="account.account.template">
+                <field name="code">481-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Deferred tax payable and receivable</field>
+        </record>
+
+        <record id="chart491000" model="account.account.template">
+                <field name="code">491-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Individual owner account</field>
+        </record>
+        
+        <!-- Expenses -->
+
+        <record id="chart501000" model="account.account.template">
+                <field name="code">501-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Material consumed</field>
+        </record>
+
+        <record id="chart502000" model="account.account.template">
+                <field name="code">502-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Energy consumed</field>
+        </record>
+
+        <record id="chart503000" model="account.account.template">
+                <field name="code">503-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other utilities consumed</field>
+        </record>
+
+        <record id="chart504000" model="account.account.template">
+                <field name="code">504-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Merchandise sold</field>
+        </record>
+
+        <record id="chart511000" model="account.account.template">
+                <field name="code">511-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Repairs and maintenance</field>
+        </record>
+
+        <record id="chart512000" model="account.account.template">
+                <field name="code">512-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Travel</field>
+        </record>
+
+        <record id="chart513000" model="account.account.template">
+                <field name="code">513-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Entertainment expenses</field>
+        </record>
+
+        <record id="chart518000" model="account.account.template">
+                <field name="code">518-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other services</field>
+        </record>
+
+        <record id="chart521000" model="account.account.template">
+                <field name="code">521-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Wages and salaries</field>
+        </record>
+
+        <record id="chart522000" model="account.account.template">
+                <field name="code">522-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Partner and cooperative member employment compensation</field>
+        </record>
+
+        <record id="chart523000" model="account.account.template">
+                <field name="code">523-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Compensation of organ members of company and cooperative</field>
+        </record>
+
+        <record id="chart524000" model="account.account.template">
+                <field name="code">524-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Legal social security insurance</field>
+        </record>
+
+        <record id="chart525000" model="account.account.template">
+                <field name="code">525-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other social security insurance</field>
+        </record>
+
+        <record id="chart526000" model="account.account.template">
+                <field name="code">526-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Social security expense of individual owner</field>
+        </record>
+
+        <record id="chart527000" model="account.account.template">
+                <field name="code">527-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Legal social security expense</field>
+        </record>
+        
+        <record id="chart528000" model="account.account.template">
+                <field name="code">528-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other social security expense</field>
+        </record>
+
+        <record id="chart531000" model="account.account.template">
+                <field name="code">531-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Road tax</field>
+        </record>
+
+        <record id="chart532000" model="account.account.template">
+                <field name="code">532-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Land value tax</field>
+        </record>
+
+        <record id="chart538000" model="account.account.template">
+                <field name="code">538-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other taxes and fees</field>
+        </record>
+
+        <record id="chart541000" model="account.account.template">
+                <field name="code">541-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Net book value of intangible and tangible assets sold</field>
+        </record>
+
+        <record id="chart542000" model="account.account.template">
+                <field name="code">542-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Material sold</field>
+        </record>
+
+        <record id="chart543000" model="account.account.template">
+                <field name="code">543-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Gifts</field>
+        </record>
+
+        <record id="chart544000" model="account.account.template">
+                <field name="code">544-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Contractual penalties and late payment interest</field>
+        </record>
+
+        <record id="chart545000" model="account.account.template">
+                <field name="code">545-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other fines and penalties</field>
+        </record>
+
+        <record id="chart546000" model="account.account.template">
+                <field name="code">546-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Write-off of receivables</field>
+        </record>
+
+        <record id="chart548000" model="account.account.template">
+                <field name="code">548-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other operating expenses</field>
+        </record>
+
+        <record id="chart549000" model="account.account.template">
+                <field name="code">549-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Shrinkage (spoilage) from operating activities</field>
+        </record>
+
+        <record id="chart551000" model="account.account.template">
+                <field name="code">551-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Depreciation and amortization of long-term tangible and intangible assets</field>
+        </record>
+
+        <record id="chart552000" model="account.account.template">
+                <field name="code">552-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Creation and clearing of provisions under special legislation</field>
+        </record>
+
+        <record id="chart554000" model="account.account.template">
+                <field name="code">554-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Creation and clearing of other provisions</field>
+        </record>
+
+        <record id="chart555000" model="account.account.template">
+                <field name="code">555-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Creation and clearing of complex pre-paid expenses</field>
+        </record>
+
+        <record id="chart557000" model="account.account.template">
+                <field name="code">557-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Clearing of allowance to revaluation differences on acquired assets</field>
+        </record>
+
+        <record id="chart558000" model="account.account.template">
+                <field name="code">558-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Creation and clearing of legal allowances in operating activities</field>
+        </record>
+
+        <record id="chart559000" model="account.account.template">
+                <field name="code">559-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Creation and clearing of allowances in operating activities</field>
+        </record>
+
+        <record id="chart561000" model="account.account.template">
+                <field name="code">561-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Securities and shares sold</field>
+        </record>
+
+        <record id="chart562000" model="account.account.template">
+                <field name="code">562-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Interests</field>
+        </record>
+
+        <record id="chart563000" model="account.account.template">
+                <field name="code">563-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Foreign exchange losses</field>
+        </record>
+
+        <record id="chart564000" model="account.account.template">
+                <field name="code">564-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Expenses on revaluation of securities</field>
+        </record>
+
+        <record id="chart566000" model="account.account.template">
+                <field name="code">566-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Expenses on financial assets</field>
+        </record>
+
+        <record id="chart567000" model="account.account.template">
+                <field name="code">567-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Expenses on derivative transactions</field>
+        </record>
+
+        <record id="chart568000" model="account.account.template">
+                <field name="code">568-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other financial expenses</field>
+        </record>
+
+        <record id="chart569000" model="account.account.template">
+                <field name="code">569-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Shrinkage (spoilage) of financial assets</field>
+        </record>
+
+        <record id="chart574000" model="account.account.template">
+                <field name="code">574-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Creation and clearing of financial provisions</field>
+        </record>
+
+        <record id="chart579000" model="account.account.template">
+                <field name="code">579-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Creation and clearing of allowances from financial activities</field>
+        </record>
+
+        <record id="chart581000" model="account.account.template">
+                <field name="code">581-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Expenses from change in method</field>
+        </record>
+
+        <record id="chart582000" model="account.account.template">
+                <field name="code">582-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Damages</field>
+        </record>
+
+        <record id="chart584000" model="account.account.template">
+                <field name="code">584-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Creation and clearing of extraordinary provisions</field>
+        </record>
+
+        <record id="chart588000" model="account.account.template">
+                <field name="code">588-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other extraordinary expenses</field>
+        </record>
+
+        <record id="chart589000" model="account.account.template">
+                <field name="code">589-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Creation and clearing of allowances on exceptional items</field>
+        </record>
+
+        <record id="chart591000" model="account.account.template">
+                <field name="code">591-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Income tax on ordinary activities - due</field>
+        </record>
+
+        <record id="chart592000" model="account.account.template">
+                <field name="code">592-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Income tax on ordinary activities - deferred</field>
+        </record>
+
+        <record id="chart593000" model="account.account.template">
+                <field name="code">593-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Income tax on extraordinary income - due</field>
+        </record>
+
+        <record id="chart594000" model="account.account.template">
+                <field name="code">594-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Income tax on extraordinary income - deferred</field>
+        </record>
+
+        <record id="chart595000" model="account.account.template">
+                <field name="code">595-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Additional income tax payments</field>
+        </record>
+
+        <record id="chart596000" model="account.account.template">
+                <field name="code">596-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Transfer of profit to partners</field>
+        </record>
+
+
+        <record id="chart597000" model="account.account.template">
+                <field name="code">597-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Transfer of operating expenses</field>
+        </record>
+
+        <record id="chart598000" model="account.account.template">
+                <field name="code">598-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Transfer of financial expenses</field>
+        </record>
+
+        <!-- income -->
+
+        <record id="chart601000" model="account.account.template">
+                <field name="code">601-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Product revenue</field>
+        </record>
+
+        <record id="chart602000" model="account.account.template">
+                <field name="code">602-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Service revenue</field>
+        </record>
+
+        <record id="chart604000" model="account.account.template">
+                <field name="code">604-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Merchandise revenue</field>
+        </record>
+
+        <record id="chart611000" model="account.account.template">
+                <field name="code">611-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Change in work in progress</field>
+        </record>
+
+        <record id="chart612000" model="account.account.template">
+                <field name="code">612-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Change in semi-finished goods</field>
+        </record>
+
+        <record id="chart614000" model="account.account.template">
+                <field name="code">614-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Change in products</field>
+        </record>
+
+        <record id="chart621000" model="account.account.template">
+                <field name="code">621-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Activation of materials and merchandise</field>
+        </record>
+
+        <record id="chart622000" model="account.account.template">
+                <field name="code">622-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Activation of internal services</field>
+        </record>
+
+        <record id="chart623000" model="account.account.template">
+                <field name="code">623-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Activation of intangible assets</field>
+        </record>
+
+        <record id="chart624000" model="account.account.template">
+                <field name="code">624-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Activation of tangible assets</field>
+        </record>
+
+        <record id="chart641000" model="account.account.template">
+                <field name="code">641-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Revenue from sale of intangible and tangible long-lived assets</field>
+        </record>
+
+        <record id="chart642000" model="account.account.template">
+                <field name="code">642-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Revenue from sale of material</field>
+        </record>
+
+        <record id="chart644000" model="account.account.template">
+                <field name="code">644-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Contractual fines and interest on late payments</field>
+        </record>
+
+        <record id="chart646000" model="account.account.template">
+                <field name="code">646-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Revenue from written off receivables</field>
+        </record>
+
+        <record id="chart648000" model="account.account.template">
+                <field name="code">648-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other operating revenue</field>
+        </record>
+
+        <record id="chart661000" model="account.account.template">
+                <field name="code">661-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Revenues from sales of securities and shares</field>
+        </record>
+
+        <record id="chart662000" model="account.account.template">
+                <field name="code">662-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Interests</field>
+        </record>
+
+        <record id="chart663000" model="account.account.template">
+                <field name="code">663-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Foreign exchange gains</field>
+        </record>
+
+       <record id="chart664000" model="account.account.template">
+                <field name="code">664-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Revenue from revaluation of securities</field>
+        </record>
+
+       <record id="chart665000" model="account.account.template">
+                <field name="code">665-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Revenue from financial assets</field>
+        </record>
+
+       <record id="chart666000" model="account.account.template">
+                <field name="code">666-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Revenue from short-term financial assets</field>
+        </record>
+
+       <record id="chart667000" model="account.account.template">
+                <field name="code">667-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Revenue from derivative operations</field>
+        </record>
+
+       <record id="chart668000" model="account.account.template">
+                <field name="code">668-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other financial revenue</field>
+        </record>
+
+       <record id="chart681000" model="account.account.template">
+                <field name="code">681-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Revenue from change in method</field>
+        </record>
+
+       <record id="chart688000" model="account.account.template">
+                <field name="code">688-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Other extraordinary revenue</field>
+        </record>
+
+       <record id="chart697000" model="account.account.template">
+                <field name="code">697-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Transfer of operating revenue</field>
+        </record>
+
+       <record id="chart698000" model="account.account.template">
+                <field name="code">698-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_income"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Transfer of financial revenue</field>
+        </record>
+
+       <record id="chart701000" model="account.account.template">
+                <field name="code">701-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Opening balance sheet account</field>
+        </record>
+
+       <record id="chart702000" model="account.account.template">
+                <field name="code">702-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Closing balance sheet account</field>
+        </record>
+
+       <record id="chart710000" model="account.account.template">
+                <field name="code">710-000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_year_earnings"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Profit and Loss Account</field>
+        </record>
+
+<!-- Chart template -->
+
+    <record id="cz_chart_template" model="account.chart.template">
+      <field name="property_account_receivable_id" ref="chart311000"/>
+      <field name="property_account_payable_id" ref="chart321000"/>
+      <field name="property_account_expense_categ_id" ref="chart518000"/>
+      <field name="property_account_income_categ_id" ref="chart602000"/>
+      <field name="income_currency_exchange_account_id" ref="chart563000"/>
+      <field name="expense_currency_exchange_account_id" ref="chart663000"/>
+    </record>
+        
+</data>
+</odoo>
