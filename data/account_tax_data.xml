@@ -214,8 +214,8 @@
       <field name="amount">21</field>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">sale</field>
-      <field name="refund_account_id" ref="chart343021"/>
-      <field name="account_id" ref="chart343100"/>
+      <field name="refund_account_id" ref="chart343101"/>
+      <field name="account_id" ref="chart343101"/>
       <field name="tag_ids" eval="[(6,0,[ref('l10n_cz.tag_cz_09'), ref('l10n_cz.tag_cz_30')])]"/>
                 <field name="tax_group_id" ref="tax_group_vat_22"/>
     </record>
@@ -226,12 +226,13 @@
       <field name="description">V15</field>
       <field name="amount">15</field>
       <field name="amount_type">percent</field>
-      <field name="type_tax_use">sale</field>
-      <field name="refund_account_id" ref="chart343015"/>
-      <field name="account_id" ref="chart343200"/>
+      <field name="type_tax_use">none</field>
+      <field name="refund_account_id" ref="chart343102"/>
+      <field name="account_id" ref="chart343102"/>
       <field name="tag_ids" eval="[ref('l10n_cz.tag_cz_08'), ref('l10n_cz.tag_cz_29')]"/>
                 <field name="tax_group_id" ref="tax_group_vat_15"/>
     </record>
+
 
     <record id="vs_kraj_10" model="account.tax.template">
       <field name="chart_template_id" ref="cz_chart_template"/>
@@ -240,8 +241,8 @@
       <field name="amount">10</field>
       <field name="amount_type">percent</field>
       <field name="type_tax_use">sale</field>
-      <field name="refund_account_id" ref="chart343010"/>
-      <field name="account_id" ref="chart343010"/>
+      <field name="refund_account_id" ref="chart343104"/>
+      <field name="account_id" ref="chart343104"/>
       <field name="tag_ids" eval="[(6,0,[ref('l10n_cz.tag_cz_07'), ref('l10n_cz.tag_cz_28')])]"/>
                 <field name="tax_group_id" ref="tax_group_vat_10"/>
     </record>
@@ -257,42 +258,6 @@
                 <field name="tax_group_id" ref="tax_group_vat_0"/>
     </record>
 
-    <record id="vs_kraj_zw" model="account.tax.template">
-      <field name="chart_template_id" ref="cz_chart_template"/>
-      <field name="name">VAT-ZW</field>
-      <field name="description">VZW</field>
-      <field name="amount">0</field>
-      <field name="amount_type">percent</field>
-      <field name="type_tax_use">sale</field>
-      <field name="tag_ids" eval="[(6,0,[ref('l10n_cz.tag_cz_02')])]"/>
-                <field name="tax_group_id" ref="tax_group_vat_0"/>
-    </record>
-
-    <record id="vs_kraj_usl_23" model="account.tax.template">
-      <field name="chart_template_id" ref="cz_chart_template"/>
-      <field name="name">VAT usł-23%</field>
-      <field name="description">VU23</field>
-      <field name="amount">23</field>
-      <field name="amount_type">percent</field>
-      <field name="type_tax_use">sale</field>
-      <field name="refund_account_id" ref="chart22030400"/>
-      <field name="account_id" ref="chart22030400"/>
-      <field name="tag_ids" eval="[(6,0,[ref('l10n_cz.tag_cz_09'), ref('l10n_cz.tag_cz_30')])]"/>
-                <field name="tax_group_id" ref="tax_group_vat_23"/>
-    </record>
-
-    <record id="vs_kraj_usl_22" model="account.tax.template">
-      <field name="chart_template_id" ref="cz_chart_template"/>
-      <field name="name">VAT usł-22%</field>
-      <field name="description">VU22</field>
-      <field name="amount">22</field>
-      <field name="amount_type">percent</field>
-      <field name="type_tax_use">sale</field>
-      <field name="refund_account_id" ref="chart22030100"/>
-      <field name="account_id" ref="chart22030100"/>
-      <field name="tag_ids" eval="[(6,0,[ref('l10n_cz.tag_cz_09'), ref('l10n_cz.tag_cz_30')])]"/>
-                <field name="tax_group_id" ref="tax_group_vat_22"/>
-    </record>
 
     # VAT domestic purchase
 
