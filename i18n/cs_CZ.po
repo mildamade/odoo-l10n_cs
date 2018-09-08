@@ -4,18 +4,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo 11 ver: 0.1\n"
+"Project-Id-Version: OpenERP Server 7.0-20140323-001318\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-23 14:49+0000\n"
-"PO-Revision-Date: 2018-08-29 00:58+0200\n"
+"PO-Revision-Date: 2014-03-23 21:56+0100\n"
 "Last-Translator: <>\n"
-"Language-Team: milda.dvorak@optimal4.cz\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
-"Language: cs_CZ\n"
-"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: \n"
+"Language: en\n"
+"X-Generator: Poedit 1.6.4\n"
 
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.11
@@ -70,7 +70,7 @@ msgstr "Splatná daň (nulová sazba)"
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.012
 msgid "Research and development capitalized"
-msgstr "Nehmotné výsledky výzkumu a vývoje"
+msgstr " Nehmotné výsledky výzkumu a vývoje"
 
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.579
@@ -90,7 +90,7 @@ msgstr "Základ daně na vstupu (snížená sazba)"
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.069
 msgid "Other long-term financial assets"
-msgstr "Jiný dlouhodobý finanční majetek"
+msgstr "Jiný dlouhodobý finanční majetek "
 
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.094
@@ -115,7 +115,7 @@ msgstr "Rozvážný"
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.479
 msgid "Other long-term liabilities"
-msgstr "Jiné dlouhodobé závazky"
+msgstr "Jiné dlouhodobé závazky "
 
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.546
@@ -140,7 +140,7 @@ msgstr "Polotovary vlastní výroby"
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.664
 msgid "Revenue from revaluation of securities"
-msgstr "Výnosy z přecenění cenných papírů"
+msgstr "Výnosy z přecenění cenných papírů  "
 
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.641
@@ -283,7 +283,7 @@ msgstr ""
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.453
 msgid "Provision for income tax"
-msgstr "Rezerva na daň z příjmů"
+msgstr "Rezerva na daň z příjmů "
 
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.377
@@ -333,7 +333,7 @@ msgstr "Výnosy z odepsaných pohledávek"
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.322
 msgid "Notes payable"
-msgstr "Směnky k úhradě"
+msgstr " Směnky k úhradě"
 
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.76
@@ -545,7 +545,7 @@ msgstr "Tvorba a zúčtování finančních rezerv"
 #. module: l10n_cs
 #: field:res.partner,company_registry:0
 msgid "Company Registry"
-msgstr "Company Registry"
+msgstr ""
 
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.412
@@ -1125,7 +1125,7 @@ msgstr "Daň z příjmů z mimořádné činnosti - splatná"
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.097
 msgid "Revaluation of acquired assets"
-msgstr "Oceňovací rozdíl k nabytému majetku"
+msgstr "Oceňovací rozdíl k nabytému majetku "
 
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.03
@@ -1175,7 +1175,7 @@ msgstr "Ostatní závazky ke společníkům a členům družstva"
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.542
 msgid "Material sold"
-msgstr "Prodaný materiál"
+msgstr " Prodaný materiál"
 
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.665
@@ -1481,7 +1481,7 @@ msgstr " Daň z příjmů z běžné činnosti - odložená"
 #. module: l10n_cs
 #: model:account.account.type,name:l10n_cs.account_type_equity
 msgid "Vlastní jmění"
-msgstr "Vlastní jmění"
+msgstr ""
 
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.6
@@ -1744,7 +1744,7 @@ msgstr "Vlastní akcie a vlastní obchodní podíly"
 #. module: l10n_cs
 #: model:ir.model,name:l10n_cs.model_res_partner
 msgid "Partner"
-msgstr "Partner"
+msgstr ""
 
 #. module: l10n_cs
 #: model:account.account.template,name:l10n_cs.460
