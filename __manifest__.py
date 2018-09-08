@@ -35,7 +35,7 @@ This is the latest Czech OpenERP localisation necessary to run OpenERP accountin
     'website': 'https://go.perlur.cloud/odoo-l10n-cs',
     'depends': ['base','base_iban', 'base_vat', 'l10n_multilang'],
     'data': [
-        'views\partner_view.xml'
+#        'views\partner_view.xml',
 #        'partner_view.xml',  
 #        'data/account_type.xml',
 #        'data/account_template_entrepreneurs.xml', #nahrazeno 'data/l10n_cs_chart_data.xml'
@@ -43,7 +43,7 @@ This is the latest Czech OpenERP localisation necessary to run OpenERP accountin
 #        'data/account_chart.xml',
 #        'data/account_tax.xml',
 #        'data/account_fiscal_templates.xml',
-        'security/ir.model.access.csv',
+#        'security/ir.model.access.csv',
         'data/l10n_cs_chart_data.xml',
         'data/account_chart_template_data.yml'
 #        'wizard/l10n_cs_wizard.xml', #přesunuto do adresáře

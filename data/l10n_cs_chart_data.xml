@@ -19,9 +19,10 @@
         </record>
     <!-- Chart template -->
 
+
         <record id="cz_chart_template" model="account.chart.template">
             <field name="name">Czech - Accounts chart</field>
-            <field name="code_digits">6</field>
+            <field name="code_digits">3</field>
             <field name="currency_id" ref="base.CZK"/>
             <field name="bank_account_code_prefix">221-000</field>
             <field name="cash_account_code_prefix">211-000</field>
@@ -29,7 +30,7 @@
         </record>
 
         <!-- Account Templates -->
-        <record id="chart000001" model="account.account.template">
+        <record id="chart261000" model="account.account.template">
             <field name="chart_template_id" ref="cz_chart_template"/>
         </record>
 
@@ -771,7 +772,7 @@
         <record id="chart341000" model="account.account.template">
                 <field name="code">341-000</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
                 <field name="name">Income tax</field>
         </record>
@@ -779,7 +780,7 @@
         <record id="chart342000" model="account.account.template">
                 <field name="code">342-000</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
                 <field name="name">Other direct taxes</field>
         </record>
@@ -867,7 +868,7 @@
         <record id="chart345000" model="account.account.template">
                 <field name="code">345-000</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_current_liabilities"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
                 <field name="name">Other taxes and fees</field>
         </record>
@@ -875,7 +876,7 @@
         <record id="chart346000" model="account.account.template">
                 <field name="code">346-000</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_current_assets"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
                 <field name="name">Subsidies from government budget</field>
         </record>
@@ -883,7 +884,7 @@
         <record id="chart347000" model="account.account.template">
                 <field name="code">347-000</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_current_assets"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
                 <field name="name">Other subsidies</field>
         </record>
@@ -891,7 +892,7 @@
         <record id="chart349000" model="account.account.template">
                 <field name="code">349-000</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_current_current_liabilities"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
                 <field name="name">VAT merge accountv</field>
         </record>

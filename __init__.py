@@ -18,7 +18,7 @@
 #
 ##############################################################################
 
-# from . import models
+from . import models
 
 
 def uninstall_hook(cr, registry):
