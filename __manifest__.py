@@ -40,17 +40,6 @@ This is the latest Czech OpenERP localisation necessary to run OpenERP accountin
         'data/account_tax_data.xml',
         'data/account_fiscal_position_data.xml',
 #        'views\partner_view.xml',
-<<<<<<< HEAD
-=======
-#        'data/account_type.xml',
-#        'data/account_template_entrepreneurs.xml', #nahrazeno 'data/l10n_cs_chart_data.xml'
-#        'data/account_tax_code.xml',
-#        'data/account_chart.xml',
-#        'data/account_tax.xml',
-#        'data/account_fiscal_templates.xml',
-        'data/l10n_cs_chart_data.xml',
-        'data/account_chart_template_data.yml'
->>>>>>> f59d7143ce34bb3767b886eb9e796444f3298d1d
 #        'wizard/l10n_cs_wizard.xml', #přesunuto do adresáře
         'data/account_chart_template_data.yml',
     ],
