@@ -6,17 +6,17 @@
         
         <record id="fiscal_position_template_1" model="account.fiscal.position.template">
             <field name="name">Kraj</field>
-            <field name="chart_template_id" ref="pl_chart_template"/>
+            <field name="chart_template_id" ref="cz_chart_template"/>
         </record>
         
         <record id="fiscal_position_template_2" model="account.fiscal.position.template">
             <field name="name">Unie</field>
-            <field name="chart_template_id" ref="pl_chart_template"/>
+            <field name="chart_template_id" ref="cz_chart_template"/>
         </record>
 
         <record id="fiscal_position_template_3" model="account.fiscal.position.template">
             <field name="name">Import/Export</field>
-            <field name="chart_template_id" ref="pl_chart_template"/>
+            <field name="chart_template_id" ref="cz_chart_template"/>
         </record>
     
     <!-- Fiscal Position Tax Templates -->
@@ -42,24 +42,6 @@
             <field name="tax_dest_id" ref="vs_unie" />
         </record>
 
-        <record id="fiscal_position_tax_template_3" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_2"  />
-            <field name="tax_src_id" ref="vs_kraj_0" />
-            <field name="tax_dest_id" ref="vs_unie" />
-        </record>
-
-        <record id="fiscal_position_tax_template_5" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_2"  />
-            <field name="tax_src_id" ref="vs_kraj_zw" />
-            <field name="tax_dest_id" ref="vs_unie" />
-        </record>
-
-        <record id="fiscal_position_tax_template_6" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_2"  />
-            <field name="tax_src_id" ref="vs_kraj_usl_21" />
-            <field name="tax_dest_id" ref="vs_dostu" />
-        </record>
-
         <!-- European Union -->
         <!-- Purchase -->
 
@@ -79,103 +61,6 @@
             <field name="position_id" ref="fiscal_position_template_2"  />
             <field name="tax_src_id" ref="vz_kraj_10" />
             <field name="tax_dest_id" ref="vz_unie" />
-        </record>
-
-        <record id="fiscal_position_tax_template_14" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_2"  />
-            <field name="tax_src_id" ref="vz_kraj_0" />
-            <field name="tax_dest_id" ref="vz_unie" />
-        </record>
-
-        <record id="fiscal_position_tax_template_15" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_2"  />
-            <field name="tax_src_id" ref="vz_kraj_zw" />
-            <field name="tax_dest_id" ref="vz_unie" />
-        </record>
-
-        <record id="fiscal_position_tax_template_16" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_2"  />
-            <field name="tax_src_id" ref="vz_kraj_usl_21" />
-            <field name="tax_dest_id" ref="vz_nabu" />
-        </record>
-
-        
-        <!-- World Export/Import -->
-        <!-- Sales -->
-
-        <record id="fiscal_position_tax_template_21" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_3"  />
-            <field name="tax_src_id" ref="vs_kraj_21" />
-            <field name="tax_dest_id" ref="vs_eksp_tow" />
-        </record>
-
-        <record id="fiscal_position_tax_template_22" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_3"  />
-            <field name="tax_src_id" ref="vs_kraj_15" />
-            <field name="tax_dest_id" ref="vs_eksp_tow" />
-        </record>
-
-        <record id="fiscal_position_tax_template_23" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_3"  />
-            <field name="tax_src_id" ref="vs_kraj_10" />
-            <field name="tax_dest_id" ref="vs_eksp_tow" />
-        </record>
-
-        <record id="fiscal_position_tax_template_24" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_3"  />
-            <field name="tax_src_id" ref="vs_kraj_0" />
-            <field name="tax_dest_id" ref="vs_eksp_tow" />
-        </record>
-
-        <record id="fiscal_position_tax_template_25" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_3"  />
-            <field name="tax_src_id" ref="vs_kraj_zw" />
-            <field name="tax_dest_id" ref="vs_eksp_tow" />
-        </record>
-
-        <record id="fiscal_position_tax_template_26" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_3"  />
-            <field name="tax_src_id" ref="vs_kraj_usl_21" />
-            <field name="tax_dest_id" ref="vs_ekspu" />
-        </record>
-
-        <!-- World Export/Import -->
-        <!-- Purchase -->
-
-        <record id="fiscal_position_tax_template_31" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_3"  />
-            <field name="tax_src_id" ref="vz_kraj_21" />
-            <field name="tax_dest_id" ref="vz_imp_tow" />
-        </record>
-
-        <record id="fiscal_position_tax_template_32" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_3"  />
-            <field name="tax_src_id" ref="vz_kraj_15" />
-            <field name="tax_dest_id" ref="vz_imp_tow" />
-        </record>
-
-        <record id="fiscal_position_tax_template_33" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_3"  />
-            <field name="tax_src_id" ref="vz_kraj_10" />
-            <field name="tax_dest_id" ref="vz_imp_tow" />
-        </record>
-
-        <record id="fiscal_position_tax_template_34" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_3"  />
-            <field name="tax_src_id" ref="vz_kraj_0" />
-            <field name="tax_dest_id" ref="vz_imp_tow" />
-        </record>
-
-        <record id="fiscal_position_tax_template_35" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_3"  />
-            <field name="tax_src_id" ref="vz_kraj_zw" />
-            <field name="tax_dest_id" ref="vz_imp_tow" />
-        </record>
-
-        <record id="fiscal_position_tax_template_36" model="account.fiscal.position.tax.template">
-            <field name="position_id" ref="fiscal_position_template_3"  />
-            <field name="tax_src_id" ref="vz_kraj_usl_21" />
-            <field name="tax_dest_id" ref="vz_impu" />
         </record>
 
     </data>

@@ -33,25 +33,17 @@ This is the latest Czech OpenERP localisation necessary to run OpenERP accountin
     'price': '100',
     'currency': 'EUR',
     'website': 'https://go.perlur.cloud/odoo-l10n-cs',
-    'depends': ['base','base_iban', 'base_vat', 'l10n_multilang'],
+    'depends': ['account', 'base_iban', 'base_vat', 'l10n_multilang'],
     'data': [
+        'data/l10n_cs_cz_chart_template.xml',
+        'data/account_data.xml',
+        'data/account_tax_data.xml',
+        'data/account_fiscal_position_data.xml',
 #        'views\partner_view.xml',
-#        'partner_view.xml',  
-#        'data/account_type.xml',
-#        'data/account_template_entrepreneurs.xml', #nahrazeno 'data/l10n_cs_chart_data.xml'
-#        'data/account_tax_code.xml',
-#        'data/account_chart.xml',
-#        'data/account_tax.xml',
-#        'data/account_fiscal_templates.xml',
-#        'security/ir.model.access.csv',
-        'data/l10n_cs_chart_data.xml',
-        'data/account_chart_template_data.yml'
 #        'wizard/l10n_cs_wizard.xml', #přesunuto do adresáře
+        'data/account_chart_template_data.yml',
     ],
  #   'demo' : ['demo/demo.xml'],
- #   "update_xml" : ['partner_view.xml'], #přesunuto nahrazeno views\partner_view.xml
- #   'installable': 'True',
- #   'images': ['images/config_chart_l10n_cs.jpeg','images/l10n_cs_chart.jpeg'],
-    'uninstall_hook': 'uninstall_hook'
+ 
 	}
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

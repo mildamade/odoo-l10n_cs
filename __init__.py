@@ -20,11 +20,4 @@
 
 from . import models
 
-
-def uninstall_hook(cr, registry):
-    cr.execute(
-        "DELETE FROM ir_model_data WHERE module = 'l10n_cs'"
-    )
-
-
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
