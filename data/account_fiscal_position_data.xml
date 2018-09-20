@@ -5,17 +5,17 @@
         <!-- Fiscal Position Templates -->
         
         <record id="fiscal_position_template_1" model="account.fiscal.position.template">
-            <field name="name">Kraj</field>
+            <field name="name">Customers in Czech Republic</field>
             <field name="chart_template_id" ref="cz_chart_template"/>
         </record>
         
         <record id="fiscal_position_template_2" model="account.fiscal.position.template">
-            <field name="name">Unie</field>
+            <field name="name">Customers inside European Union</field>
             <field name="chart_template_id" ref="cz_chart_template"/>
         </record>
 
         <record id="fiscal_position_template_3" model="account.fiscal.position.template">
-            <field name="name">Import/Export</field>
+            <field name="name">Customers outside European Union</field>
             <field name="chart_template_id" ref="cz_chart_template"/>
         </record>
     
