@@ -3,22 +3,14 @@
 <menuitem id="account_reports_cs_statements_menu" name="Czech" parent="account.menu_finance_reports" sequence="0" groups="account.group_account_user"/>
 
 <data noupdate="1">
-    <record model="account.account.type" id="account_type_tax">
-      <field name="name">Tax</field>
-    </record>
-
-    <record model="account.account.type" id="account_type_nonbalance">
-      <field name="name">Nonbalance</field>
-    </record>
-
         <record id="chart261000" model="account.account.template">
                 <field name="code">261000</field>
                 <field name="reconcile" eval="True"/>
                 <field name="user_type_id" ref="account.data_account_type_current_assets"/>
                 <field name="name">Cash in transit</field>
         </record>
-    <!-- Chart template -->
 
+    <!-- Chart template -->
 
         <record id="cz_chart_template" model="account.chart.template">
             <field name="name">Czech - Accounts chart</field>
@@ -29,12 +21,13 @@
             <field name="transfer_account_id" ref="chart261000"/>
         </record>
 
-        <!-- Account Templates -->
         <record id="chart261000" model="account.account.template">
             <field name="chart_template_id" ref="cz_chart_template"/>
         </record>
 
+        <!-- Account Templates -->
         <!-- Asset 000-->
+
         <record id="chart010000" model="account.account.template">
                 <field name="code">010000</field>
                 <field name="reconcile" eval="False"/>
@@ -785,84 +778,252 @@
                 <field name="name">Other direct taxes</field>
         </record>
 
-        <record id="chart343100" model="account.account.template">
-                <field name="code">343100</field>
+        <record id="chart343000" model="account.account.template">
+                <field name="code">343000</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
-                <field name="name">Value added tax 0% in</field>
+                <field name="name">Value added tax</field>
         </record>
 
         <record id="chart343101" model="account.account.template">
                 <field name="code">343101</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
-                <field name="name">Value added tax 21% in</field>
+                <field name="name">Value added tax 21% out cz</field>
         </record>
 
         <record id="chart343102" model="account.account.template">
                 <field name="code">343102</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
-                <field name="name">Value added tax 15% in</field>
+                <field name="name">Value added tax 15% out cz</field>
         </record>
 
         <record id="chart343104" model="account.account.template">
                 <field name="code">343104</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
-                <field name="name">Value added tax 10% in</field>
+                <field name="name">Value added tax 10% out cz</field>
+        </record>
+        
+        <record id="chart343111" model="account.account.template">
+                <field name="code">343111</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 21% out eu</field>
         </record>
 
-        <record id="chart343199" model="account.account.template">
-                <field name="code">343199</field>
+        <record id="chart343112" model="account.account.template">
+                <field name="code">343112</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
-                <field name="name">Value added tax free in</field>
+                <field name="name">Value added tax 15% out eu</field>
         </record>
 
-        <record id="chart343200" model="account.account.template">
-                <field name="code">343200</field>
+        <record id="chart343114" model="account.account.template">
+                <field name="code">343114</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
-                <field name="name">Value added tax 0% out</field>
+                <field name="name">Value added tax 10% out eu</field>
+        </record>
+
+        <record id="chart343121" model="account.account.template">
+                <field name="code">343121</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 21% out eu service</field>
+        </record>
+
+        <record id="chart343122" model="account.account.template">
+                <field name="code">343122</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 15% out eu service</field>
+        </record>
+
+        <record id="chart343124" model="account.account.template">
+                <field name="code">343124</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 10% out eu service</field>
+        </record>
+
+        <record id="chart343131" model="account.account.template">
+                <field name="code">343131</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 21% out other</field>
+        </record>
+
+        <record id="chart343132" model="account.account.template">
+                <field name="code">343132</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 15% out other</field>
+        </record>
+
+        <record id="chart343134" model="account.account.template">
+                <field name="code">343134</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 10% out other</field>
+        </record>
+
+        <record id="chart343141" model="account.account.template">
+                <field name="code">343141</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax free export eu</field>
+        </record>
+
+        <record id="chart343142" model="account.account.template">
+                <field name="code">343142</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax free export service eu</field>
+        </record>
+
+        <record id="chart343143" model="account.account.template">
+                <field name="code">343143</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax free export other</field>
         </record>
 
         <record id="chart343201" model="account.account.template">
                 <field name="code">343201</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
-                <field name="name">Value added tax 21% out</field>
+                <field name="name">Value added tax 21% in</field>
         </record>
 
         <record id="chart343202" model="account.account.template">
                 <field name="code">343202</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
-                <field name="name">Value added tax 15% out</field>
+                <field name="name">Value added tax 15% in</field>
         </record>
 
         <record id="chart343204" model="account.account.template">
                 <field name="code">343204</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
-                <field name="name">Value added tax 10% out</field>
+                <field name="name">Value added tax 10% in</field>
         </record>
 
-        <record id="chart343299" model="account.account.template">
-                <field name="code">343299</field>
+        <record id="chart343211" model="account.account.template">
+                <field name="code">343211</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_tax"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
-                <field name="name">Value added tax free out</field>
+                <field name="name">Value added tax 21% in eu</field>
+        </record>
+
+        <record id="chart343212" model="account.account.template">
+                <field name="code">343212</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 15% in eu</field>
+        </record>
+
+        <record id="chart343214" model="account.account.template">
+                <field name="code">343214</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 10% in eu</field>
+        </record>
+
+        <record id="chart343221" model="account.account.template">
+                <field name="code">343221</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 21% in eu service</field>
+        </record>
+
+        <record id="chart343222" model="account.account.template">
+                <field name="code">343222</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 15% in eu service</field>
+        </record>
+
+        <record id="chart343224" model="account.account.template">
+                <field name="code">343224</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 10% in eu service</field>
+        </record>
+
+        <record id="chart343231" model="account.account.template">
+                <field name="code">343231</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 21% in otrer</field>
+        </record>
+
+        <record id="chart343232" model="account.account.template">
+                <field name="code">343232</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 15% in other</field>
+        </record>
+
+        <record id="chart343234" model="account.account.template">
+                <field name="code">343234</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax 10% in other</field>
+        </record>
+
+        <record id="chart343241" model="account.account.template">
+                <field name="code">343241</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax free in other with refund</field>
+        </record>
+
+        <record id="chart343242" model="account.account.template">
+                <field name="code">343242</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Value added tax free in from non vat</field>
+        </record>
+
+        <record id="chart343900" model="account.account.template">
+                <field name="code">343900</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Settlement VAT with the tax office</field>
         </record>
 
         <record id="chart345000" model="account.account.template">
@@ -1733,6 +1894,14 @@
                 <field name="name">Damages</field>
         </record>
 
+        <record id="chart583000" model="account.account.template">
+                <field name="code">583000</field>
+                <field name="reconcile" eval="False"/>
+                <field name="user_type_id" ref="account.data_account_type_expenses"/>
+                <field name="chart_template_id" ref="cz_chart_template"/>
+                <field name="name">Change in product status</field>
+        </record>
+
         <record id="chart584000" model="account.account.template">
                 <field name="code">584000</field>
                 <field name="reconcile" eval="False"/>
@@ -1804,7 +1973,6 @@
                 <field name="chart_template_id" ref="cz_chart_template"/>
                 <field name="name">Transfer of profit to partners</field>
         </record>
-
 
         <record id="chart597000" model="account.account.template">
                 <field name="code">597000</field>
@@ -2043,7 +2211,7 @@
        <record id="chart701000" model="account.account.template">
                 <field name="code">701000</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_nonbalance"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
                 <field name="name">Opening balance sheet account</field>
         </record>
@@ -2051,7 +2219,7 @@
        <record id="chart702000" model="account.account.template">
                 <field name="code">702000</field>
                 <field name="reconcile" eval="False"/>
-                <field name="user_type_id" ref="account_type_nonbalance"/>
+                <field name="user_type_id" ref="account.data_account_type_current_assets"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
                 <field name="name">Closing balance sheet account</field>
         </record>
@@ -2071,10 +2239,12 @@
       <field name="property_account_payable_id" ref="chart321000"/>
       <field name="property_account_expense_categ_id" ref="chart518000"/>
       <field name="property_account_income_categ_id" ref="chart602000"/>
+      <field name="property_stock_account_input_categ_id" ref="chart112000"/>
+      <field name="property_stock_account_output_categ_id" ref="chart123000"/>
+      <field name="property_stock_valuation_account_id" ref="chart581000"/>
       <field name="income_currency_exchange_account_id" ref="chart563000"/>
       <field name="expense_currency_exchange_account_id" ref="chart663000"/>
       <field name="use_anglo_saxon" eval="False"/>
-
     </record>
         
 </data>
