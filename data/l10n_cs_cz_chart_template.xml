@@ -1020,7 +1020,7 @@
 
         <record id="chart343900" model="account.account.template">
                 <field name="code">343900</field>
-                <field name="reconcile" eval="False"/>
+                <field name="reconcile" eval="True"/>
                 <field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
                 <field name="chart_template_id" ref="cz_chart_template"/>
                 <field name="name">Settlement VAT with the tax office</field>

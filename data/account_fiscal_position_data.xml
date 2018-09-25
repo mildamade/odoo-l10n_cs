@@ -26,20 +26,20 @@
 
         <record id="fiscal_position_tax_template_1" model="account.fiscal.position.tax.template">
             <field name="position_id" ref="fiscal_position_template_2"  />
-            <field name="tax_src_id" ref="vs_kraj_21" />
-            <field name="tax_dest_id" ref="vs_unie" />
+            <field name="tax_src_id" ref="vs_cz_21" />
+            <field name="tax_dest_id" ref="vs_eu_product0" />
         </record>
 
         <record id="fiscal_position_tax_template_2" model="account.fiscal.position.tax.template">
             <field name="position_id" ref="fiscal_position_template_2"  />
-            <field name="tax_src_id" ref="vs_kraj_15" />
-            <field name="tax_dest_id" ref="vs_unie" />
+            <field name="tax_src_id" ref="vs_cz_15" />
+            <field name="tax_dest_id" ref="vs_eu_product0" />
         </record>
 
         <record id="fiscal_position_tax_template_3" model="account.fiscal.position.tax.template">
             <field name="position_id" ref="fiscal_position_template_2"  />
-            <field name="tax_src_id" ref="vs_kraj_10" />
-            <field name="tax_dest_id" ref="vs_unie" />
+            <field name="tax_src_id" ref="vs_cz_10" />
+            <field name="tax_dest_id" ref="vs_eu_product0" />
         </record>
 
         <!-- European Union -->
@@ -47,20 +47,20 @@
 
         <record id="fiscal_position_tax_template_11" model="account.fiscal.position.tax.template">
             <field name="position_id" ref="fiscal_position_template_2"  />
-            <field name="tax_src_id" ref="vz_kraj_21" />
-            <field name="tax_dest_id" ref="vz_unie" />
+            <field name="tax_src_id" ref="vp_cz_21" />
+            <field name="tax_dest_id" ref="vp_eu_product21" />
         </record>
 
         <record id="fiscal_position_tax_template_12" model="account.fiscal.position.tax.template">
             <field name="position_id" ref="fiscal_position_template_2"  />
-            <field name="tax_src_id" ref="vz_kraj_15" />
-            <field name="tax_dest_id" ref="vz_unie" />
+            <field name="tax_src_id" ref="vp_cz_15" />
+            <field name="tax_dest_id" ref="vp_eu_product15" />
         </record>
 
         <record id="fiscal_position_tax_template_13" model="account.fiscal.position.tax.template">
             <field name="position_id" ref="fiscal_position_template_2"  />
-            <field name="tax_src_id" ref="vz_kraj_10" />
-            <field name="tax_dest_id" ref="vz_unie" />
+            <field name="tax_src_id" ref="vp_cz_10" />
+            <field name="tax_dest_id" ref="vp_eu_product10" />
         </record>
 
     </data>
