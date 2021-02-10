@@ -1,10 +1,9 @@
 from odoo import api, fields, models
 
-class ResPartner(model.Model):
+class l10n_cs(models.Model):
+#    _name = 'l10n_cs.l10n_cs'
+#    _description = 'l10n_cs.l10n_cs'
     _inherit = 'res.partner'
 
     company_registry = fields.Char('Company Registry', size=64)
 
-    @api.model
-    def _company_registry(self):
-        return super(ResPartner, self)._company_registry() + ['company_registry']

@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2012 - 2017 PERLUR Group (<https://go.perlur.cloud/odoo-l10n-cs>).
+#    Copyright (C) 2018 - 2021 Optimal4 s.r.o. (<https://www.optimal4.cz>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -21,29 +21,28 @@
 
 {
     'name': 'Czech - Accounting',
-    'version': '2.0',
+    'version': '2.1',
     'category': 'Localization/Account Charts',
     'description': """
-This is the latest Czech OpenERP localisation necessary to run OpenERP accounting for Czech businesses with:
+This is the Czech Odoo localisation necessary to run Odoo accounting for Czech businesses with:
 ============================================================================================================
     - a Chart Of Accounts for Czech Republic
-    - VAT tax structure with VATs for years 2010, 2011, 2012, 2013 and 2014
-    - a few other adaptations""",
-    'author': 'PERLUR Group and Optimal4',
-    'price': '100',
+    - VAT tax structure with VATs year 2021
+    """,
+    'author': 'Optimal4',
+    'price': '0',
     'currency': 'EUR',
-    'website': 'https://go.perlur.cloud/odoo-l10n-cs',
+    'website': 'https://www.odoo.co.cz/odoo-l10n-cs',
     'depends': ['account', 'base_iban', 'base_vat', 'l10n_multilang'],
     'data': [
         'data/l10n_cs_cz_chart_template.xml',
         'data/account_data.xml',
-        'data/account_tax_data.xml',
-        'data/account_fiscal_position_data.xml',
+#        'data/account_tax_data.xml',
+#        'data/account_fiscal_position_data.xml',
 #        'views\partner_view.xml',
-#        'wizard/l10n_cs_wizard.xml', #přesunuto do adresáře
-        'data/account_chart_template_data.yml',
+
+#        'data/account_chart_template_data.yml',
     ],
- #   'demo' : ['demo/demo.xml'],
+    'demo' : ['demo/demo.xml'],
  
 	}
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

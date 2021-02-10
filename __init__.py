@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2012 STOPKA Consulting s.r.o. (<https://www.stopkaconsulting.eu>).
+#    Copyright (C) 2021 Milda Dvorak (<https://www.milda.top>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,4 +20,4 @@
 
 from . import models
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+

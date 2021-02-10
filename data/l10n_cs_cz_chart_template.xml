@@ -18,7 +18,7 @@
             <field name="currency_id" ref="base.CZK"/>
             <field name="bank_account_code_prefix">221</field>
             <field name="cash_account_code_prefix">211</field>
-            <field name="transfer_account_id" ref="chart261000"/>
+            <field name="transfer_account_code_prefix" ref="chart261000"/>
         </record>
 
         <record id="chart261000" model="account.account.template">

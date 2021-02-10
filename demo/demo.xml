@@ -1,22 +1,22 @@
-<openerp>
+<odoo>
 <data noupdate="1">       
         <record id="smartmode" model="res.partner">
-            <field name="name">STOPKA Consulting s.r.o.</field>
+            <field name="name">Optimal 4 s.r.o.</field>
             <field name="is_company">1</field>
-            <field name="street">Na Obecní 1527/8</field>
-            <field name="zip">700 30</field>
-            <field name="city">Ostrava - Jih</field>
+            <field name="street">Masarykova 457</field>
+            <field name="zip">289 22</field>
+            <field name="city">Lysá nad Labem</field>
             <field name="country_id" model="res.country" search="[('code','=','cz')]"/>
-            <field name="phone">+420 608 149 955</field>
+            <field name="phone">+420 777 020 721</field>
             <field name="website">https://www.stopkaconsulting.eu</field>
         </record>
         <record id="res_partner_address_1" model="res.partner">
-            <field name="name">Marek Stopka</field>
+            <field name="name">Milda Dvořák</field>
             <field name="parent_id" ref="smartmode"/>
             <field name="use_parent_address" eval="1"/>
-            <field name="email">marek.stopka@perlur.cz</field>
+            <field name="email">milda.dvorak@optimal4.cz</field>
             <field name="active">1</field>
             <field name="type">default</field>
         </record>
     </data>
-</openerp>
+</odoo>
